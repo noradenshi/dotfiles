@@ -1,26 +1,39 @@
 let mapleader = " "
 
-"set bg=dark
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+set nu relativenumber
+set vb t_vb=
+
+filetype plugin on
+syntax on
+
+set incsearch
+set hlsearch
+
+set bg=dark
 set hlsearch
 set incsearch
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
-set fileformat=unix
+"set fileformat=unix
 
 set nocompatible
-syntax on
 set termguicolors
-colorscheme catppuccin_mocha
+colorscheme catppuccin_macchiato
+let g:airline_theme = 'catppuccin_mocha'
 
 set encoding=utf-8
-set number relativenumber
 set wildmode=longest,list,full
 
 set splitbelow splitright
 
-noremap <leader>pv <cmd>Ex<CR>
-noremap <leader>no <cmd>noh<CR>
+nnoremap <leader>pv :Ex<CR>
+nnoremap <leader>no :nohl<CR>
+nnoremap <F5> :term<CR>"C:\Program Files\CodeBlocks\MinGW\bin\gcc.exe"
+nnoremap <F6> :term<CR>./c.exe<CR>
