@@ -25,15 +25,17 @@ set autoindent
 
 set nocompatible
 set termguicolors
-colorscheme catppuccin_macchiato
+colorscheme catppuccin_mocha
 let g:airline_theme = 'catppuccin_mocha'
 
 set encoding=utf-8
+set number relativenumber
+
 set wildmode=longest,list,full
 
 set splitbelow splitright
 
 nnoremap <leader>pv :Ex<CR>
 nnoremap <leader>no :nohl<CR>
-nnoremap <F5> :term<CR>"C:\Program Files\CodeBlocks\MinGW\bin\gcc.exe"
-nnoremap <F6> :term<CR>./c.exe<CR>
+# nnoremap <F5> :term<CR>"C:\Program Files\CodeBlocks\MinGW\bin\gcc.exe"
+# nnoremap <F6> :term<CR>./c.exe<CR>
