@@ -37,5 +37,5 @@ set splitbelow splitright
 
 nnoremap <leader>pv :Ex<CR>
 nnoremap <leader>no :nohl<CR>
-# nnoremap <F5> :term<CR>"C:\Program Files\CodeBlocks\MinGW\bin\gcc.exe"
-# nnoremap <F6> :term<CR>./c.exe<CR>
+"nnoremap <F5> :term<CR>"C:\Program Files\CodeBlocks\MinGW\bin\gcc.exe"
+"nnoremap <F6> :term<CR>./c.exe<CR>
