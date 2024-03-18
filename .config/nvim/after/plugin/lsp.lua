@@ -18,5 +18,7 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 -- require'lspconfig'.omnisharp.setup{}
 
+require'lspconfig'.jdtls.setup{}
+
 lsp.setup()
 -- require('clangd_extensions').setup()
