@@ -16,7 +16,8 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 -- require'lspconfig'.eslint.setup{}
 -- require'lspconfig'.tsserver.setup{}
 
--- require'lspconfig'.omnisharp.setup{}
+require'lspconfig'.omnisharp.setup{}
+-- require'lspconfig'.csharp_ls.setup{}
 
 require'lspconfig'.jdtls.setup{}
 

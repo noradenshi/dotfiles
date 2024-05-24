@@ -7,7 +7,7 @@ require("oil").setup({
         ["<C-g>s"] = "actions.select_vsplit",
         ["<C-g>h"] = "actions.select_split",
         ["<C-g>t"] = "actions.select_tab",
-        ["<C-p>"] = "actions.preview",
+        ["gp"] = "actions.preview",
         ["<C-c>"] = "actions.close",
         ["<C-l>"] = "actions.refresh",
         ["-"] = "actions.parent",

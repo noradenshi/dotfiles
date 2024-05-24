@@ -6,6 +6,8 @@ return {
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
+    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" }
@@ -61,6 +63,7 @@ return {
             require("which-key").setup()
         end
     },
+
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -73,6 +76,7 @@ return {
             }
         end
     },
+
     {
         "nvim-neorg/neorg",
         dependencies = { "nvim-lua/plenary.nvim" },
