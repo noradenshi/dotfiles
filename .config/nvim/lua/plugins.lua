@@ -1,19 +1,5 @@
 return {
     {
-        'stevearc/oil.nvim',
-        opts = {},
-        -- Optional dependencies
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
-
-    { 'akinsho/toggleterm.nvim', version = "*", config = true },
-
-    {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" }
-    },
-
-    {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
@@ -21,38 +7,25 @@ return {
             require("catppuccin").setup {
                 transparent_background = true,
             }
+            vim.cmd.colorscheme("catppuccin-mocha")
+
+            --	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            --	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         end
     },
 
     {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
+        "mbbill/undotree",
+        config = function()
+            vim.keymap.set('n', "<leader>u", vim.cmd.UndotreeToggle)
+        end
     },
 
-    "theprimeagen/harpoon",
-    "mbbill/undotree",
-    "tpope/vim-fugitive", -- Git
-
-    --  "p00f/clangd_extensions.nvim",
     {
-        "VonHeikemen/lsp-zero.nvim",
-        branch = "v2.x",
-        dependencies = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },   -- Required
-            {
-                'williamboman/mason.nvim', -- Optional
-                build = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
-            },
-            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },     -- Required
-            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' },     -- Required
-        }
+        "tpope/vim-fugitive", -- Git
+        config = function()
+            vim.keymap.set('n', "<leader>gs", vim.cmd.Git)
+        end
     },
 
     {

@@ -4,6 +4,8 @@
 -- vim.keymap.set('n', '<F3>', '<cmd>!cmake .. -DCMAKE_BUILD_TYPE=Debug<CR>')
 -- vim.keymap.set('n', '<F4>', '<cmd>!cmake .. -DCMAKE_BUILD_TYPE=Release<CR>')
 
+-- fugitive
+
 -- meson
 vim.keymap.set('n', '<F3>', '<cmd>!meson setup build --buildtype=release --reconfigure<CR>')
 vim.keymap.set('n', '<F4>', '<cmd>!meson setup build --buildtype=debug --reconfigure<CR>')
