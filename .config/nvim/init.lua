@@ -12,5 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = ' '
-require("lazy").setup("plugins")
+require("lazy").setup("plugins",{
+    change_detection = {
+        notify = false,
+    }
+})
 require("config").setup()
+
+-- vim.cmd('hi IlluminatedWordText guibg=none gui=underline')
+-- vim.cmd('hi IlluminatedWordRead guibg=none gui=underline')
+-- vim.cmd('hi IlluminatedWordWrite guibg=none gui=underline')

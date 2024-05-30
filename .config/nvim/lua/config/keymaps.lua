@@ -14,8 +14,8 @@ vim.keymap.set('n', '<F6>', '<cmd>!./bin/exe<CR>')
 
 vim.keymap.set('n', '<leader>o', '<cmd>Oil<CR>', { desc = "Open parent directory" })
 vim.keymap.set('n', '<leader>no', '<cmd>noh<CR>', { desc = "No highlight" })
-vim.keymap.set('n', 'gB', '<cmd>bprevious<CR>', { desc = "Go buffer back" })
-vim.keymap.set('n', 'gb', '<cmd>bnext<CR>', { desc = "Go buffer forward" })
+-- vim.keymap.set('n', 'gB', '<cmd>bprevious<CR>', { desc = "Go buffer back" })
+-- vim.keymap.set('n', 'gb', '<cmd>bnext<CR>', { desc = "Go buffer forward" })
 
 vim.keymap.set('n', '<leader>po', '<cmd>mks! ~/.config/nvim/session.vim<CR>', { desc = "override last session" })
 vim.keymap.set('n', '<leader>pl', '<cmd>source ~/.config/nvim/session.vim<CR>', { desc = "load last session" })
