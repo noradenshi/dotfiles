@@ -35,9 +35,19 @@ return {
         end)
         -- lsp.skip_server_setup({'clangd'})
 
-        require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+        require 'lspconfig'.lua_ls.setup(lsp.nvim_lua_ls())
         require 'lspconfig'.omnisharp.setup {}
         require 'lspconfig'.jdtls.setup {}
+        require 'lspconfig'.rust_analyzer.setup {
+            settings = {
+                rust_analyzer = {
+                    diagnostics = {
+                        experimental = {
+                            enable = true }
+                    }
+                }
+            }
+        }
 
         lsp.setup()
         -- require('clangd_extensions').setup()
