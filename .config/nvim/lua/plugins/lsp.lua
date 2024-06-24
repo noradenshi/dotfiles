@@ -22,6 +22,7 @@ return {
         { 'hrsh7th/cmp-nvim-lsp' }, -- Required
         { 'L3MON4D3/LuaSnip' },     -- Required
     },
+
     config = function()
         local lsp = require('lsp-zero').preset({
             manage_nvim_cmp = {
@@ -33,23 +34,25 @@ return {
             lsp.default_keymaps({ buffer = bufnr })
             -- client.server_capabilities.semanticTokensProvider = nil
         end)
-        -- lsp.skip_server_setup({'clangd'})
 
         require 'lspconfig'.lua_ls.setup(lsp.nvim_lua_ls())
         require 'lspconfig'.omnisharp.setup {}
         require 'lspconfig'.jdtls.setup {}
         require 'lspconfig'.rust_analyzer.setup {
             settings = {
-                rust_analyzer = {
+                ["rust-analyzer"] = {
+                    check = {
+                        command = "clippy",
+                    },
                     diagnostics = {
                         experimental = {
-                            enable = true }
+                            enable = true
+                        }
                     }
                 }
             }
         }
 
         lsp.setup()
-        -- require('clangd_extensions').setup()
     end
 }
