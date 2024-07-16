@@ -19,6 +19,7 @@ return {
                 ["-"] = "actions.parent",
                 ["_"] = "actions.open_cwd",
                 ["`"] = "actions.cd",
+                ["cd"] = "actions.cd",
                 ["~"] = "actions.tcd",
                 ["gs"] = "actions.change_sort",
                 ["gx"] = "actions.open_external",

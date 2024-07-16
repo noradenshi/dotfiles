@@ -36,22 +36,22 @@ return {
         end)
 
         require 'lspconfig'.lua_ls.setup(lsp.nvim_lua_ls())
-        require 'lspconfig'.omnisharp.setup {}
-        require 'lspconfig'.jdtls.setup {}
-        require 'lspconfig'.rust_analyzer.setup {
-            settings = {
-                ["rust-analyzer"] = {
-                    check = {
-                        command = "clippy",
-                    },
-                    diagnostics = {
-                        experimental = {
-                            enable = true
-                        }
-                    }
-                }
-            }
-        }
+        -- require 'lspconfig'.omnisharp.setup {}
+        -- require 'lspconfig'.jdtls.setup {}
+        -- require 'lspconfig'.rust_analyzer.setup {
+        --     settings = {
+        --         ["rust-analyzer"] = {
+        --             check = {
+        --                 command = "clippy",
+        --             },
+        --             diagnostics = {
+        --                 experimental = {
+        --                     enable = true
+        --                 }
+        --             }
+        --         }
+        --     }
+        -- }
 
         lsp.setup()
     end
