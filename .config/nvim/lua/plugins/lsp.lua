@@ -36,8 +36,15 @@ return {
         end)
 
         require 'lspconfig'.lua_ls.setup(lsp.nvim_lua_ls())
+        require 'lspconfig'.jdtls.setup {}
+
+        -- eslint = {
+        --     on_init = function(client)
+        --         client.config.settings.workingDirectory = { directory = client.config.root_dir }
+        --     end,
+        -- }
+
         -- require 'lspconfig'.omnisharp.setup {}
-        -- require 'lspconfig'.jdtls.setup {}
         -- require 'lspconfig'.rust_analyzer.setup {
         --     settings = {
         --         ["rust-analyzer"] = {
