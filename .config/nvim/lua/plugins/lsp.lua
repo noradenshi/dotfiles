@@ -32,20 +32,40 @@ return {
             cmp.setup({
                 sources = {
                     { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
+                    { name = 'luasnip', keyword_length = 2 },
                     -- { name = 'buffer' },
+                },
+                snippet = {
+                    expand = function(args)
+                        -- vim.snippet.expand(args.body) -- breaks with luasnip
+                        require('luasnip').lsp_expand(args.body)
+                    end,
                 },
                 mapping = cmp.mapping.preset.insert({
                     ['<C-Space>'] = cmp.mapping.complete(),
                     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
                     ['<C-d>'] = cmp.mapping.scroll_docs(4),
+
+                    -- jump to the next snippet placeholder
+                    ['<C-f>'] = cmp.mapping(function(fallback)
+                        local luasnip = require('luasnip')
+                        if luasnip.locally_jumpable(1) then
+                            luasnip.jump(1)
+                        else
+                            fallback()
+                        end
+                    end, { 'i', 's' }),
+
+                    -- jump to the previous snippet placeholder
+                    ['<C-b>'] = cmp.mapping(function(fallback)
+                        local luasnip = require('luasnip')
+                        if luasnip.locally_jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, { 'i', 's' }),
                 }),
-                snippet = {
-                    expand = function(args)
-                        vim.snippet.expand(args.body)
-                        require('luasnip').lsp_expand(args.body)
-                    end,
-                },
             })
 
             cmp.setup.filetype({ "sql" }, {
@@ -54,7 +74,7 @@ return {
                     { name = 'vim-dadbod-completion' },
                     { name = 'buffer' },
                 },
-            });
+            })
         end
     },
 

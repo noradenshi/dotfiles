@@ -4,7 +4,9 @@
 -- vim.keymap.set('n', '<F3>', '<cmd>!cmake .. -DCMAKE_BUILD_TYPE=Debug<CR>')
 -- vim.keymap.set('n', '<F4>', '<cmd>!cmake .. -DCMAKE_BUILD_TYPE=Release<CR>')
 
--- fugitive
+-- error jumping
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { desc = "Jump to next error" })
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { desc = "Jump to previous error" })
 
 -- meson
 vim.keymap.set('n', '<F3>', '<cmd>!meson setup build --buildtype=release --reconfigure<CR>')

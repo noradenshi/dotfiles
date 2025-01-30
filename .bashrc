@@ -70,7 +70,8 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    # PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1=" \n⎲  \[\e[1;34m\]\w \[\e[0;33m\]\$(parse_git_branch) \n\[\e[0;37m\]⎳  "
     ;;
 *)
     ;;
