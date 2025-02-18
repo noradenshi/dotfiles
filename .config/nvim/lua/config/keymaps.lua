@@ -1,18 +1,18 @@
+-- meson
+-- vim.keymap.set('n', '<F3>', '<cmd>!meson setup build --buildtype=release --reconfigure<CR>')
+-- vim.keymap.set('n', '<F4>', '<cmd>!meson setup build --buildtype=debug --reconfigure<CR>')
+-- vim.keymap.set('n', '<F5>', '<cmd>!meson install -C build<CR>')
+-- vim.keymap.set('n', '<F6>', '<cmd>!./bin/exe<CR>')
+
 -- cmake
--- vim.keymap.set('n', '<F6>', '<cmd>!../bin/Debug/main<CR>')
--- vim.keymap.set('n', '<F5>', '<cmd>!cmake --build .<CR>')
--- vim.keymap.set('n', '<F3>', '<cmd>!cmake .. -DCMAKE_BUILD_TYPE=Debug<CR>')
--- vim.keymap.set('n', '<F4>', '<cmd>!cmake .. -DCMAKE_BUILD_TYPE=Release<CR>')
+vim.keymap.set('n', '<F3>', '<cmd>!cmake -B build/ -S . -DCMAKE_BUILD_TYPE=Debug<CR>')
+vim.keymap.set('n', '<F4>', '<cmd>!cmake -B build/ -S . -DCMAKE_BUILD_TYPE=Release<CR>')
+vim.keymap.set('n', '<F5>', '<cmd>!cmake --build build/<CR>')
+vim.keymap.set('n', '<F6>', '<cmd>!./build/bin/exe<CR>')
 
 -- error jumping
 vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { desc = "Jump to next error" })
 vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { desc = "Jump to previous error" })
-
--- meson
-vim.keymap.set('n', '<F3>', '<cmd>!meson setup build --buildtype=release --reconfigure<CR>')
-vim.keymap.set('n', '<F4>', '<cmd>!meson setup build --buildtype=debug --reconfigure<CR>')
-vim.keymap.set('n', '<F5>', '<cmd>!meson install -C build<CR>')
-vim.keymap.set('n', '<F6>', '<cmd>!./bin/exe<CR>')
 
 vim.keymap.set('n', '<leader>o', '<cmd>Oil<CR>', { desc = "Open parent directory" })
 vim.keymap.set('n', '<leader>no', '<cmd>noh<CR>', { desc = "No highlight" })
