@@ -1,2 +1,3 @@
 .config/nvim/session.vim
 .vim/undodir/
+*lock.json
