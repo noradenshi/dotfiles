@@ -5,14 +5,14 @@
 -- vim.keymap.set('n', '<F6>', '<cmd>!./bin/exe<CR>')
 
 -- cmake
-vim.keymap.set('n', '<F3><F3>', '<cmd>!cmake -B build/ -S . -DCMAKE_BUILD_TYPE=Debug<CR>')
-vim.keymap.set('n', '<F3><F4>', '<cmd>!cmake -B build/ -S . -DCMAKE_BUILD_TYPE=Release<CR>')
-vim.keymap.set('n', '<F3><F5>', '<cmd>!cmake --build build/<CR>')
-vim.keymap.set('n', '<F3><F6>', '<cmd>!./build/bin/exe<CR>')
+vim.keymap.set('n', '<F3>', '<cmd>!cmake -B build/ -S . -DCMAKE_BUILD_TYPE=Debug<CR>')
+vim.keymap.set('n', '<F4>', '<cmd>!cmake -B build/ -S . -DCMAKE_BUILD_TYPE=Release<CR>')
+vim.keymap.set('n', '<F5>', '<cmd>!cmake --build build/<CR>')
+vim.keymap.set('n', '<F6>', '<cmd>!./build/bin/exe<CR>')
 
--- error jumping
-vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { desc = "Jump to next error" })
-vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { desc = "Jump to previous error" })
+-- error jumping -- deprecated as of 0.11 -- to fix later
+-- vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { desc = "Jump to next error" })
+-- vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { desc = "Jump to previous error" })
 
 vim.keymap.set('n', '<leader>o', '<cmd>Oil<CR>', { desc = "Open parent directory" })
 vim.keymap.set('n', '<leader>no', '<cmd>noh<CR>', { desc = "No highlight" })
@@ -46,9 +46,6 @@ vim.keymap.set('v', '<leader>d', "\"_d")
 
 vim.keymap.set('n', 'Q', "<nop>")
 vim.keymap.set('n', '<C-f>', "<cmd>silent !tmux neww tmux-sessionizer<CR>")
--- vim.keymap.set('n', '<leader>f', function()
---     vim.lsp.buf.format()
--- end)
 
 vim.keymap.set('n', '<C-k>', "<cmd>cnext<CR>zz")
 vim.keymap.set('n', '<C-j>', "<cmd>cprev<CR>zz")
