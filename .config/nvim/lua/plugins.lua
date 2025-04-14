@@ -36,7 +36,8 @@ return {
             require("lualine").setup {
                 sections = {
                     lualine_b = { 'branch' },
-                    lualine_x = { 'encoding', 'filetype' }
+                    lualine_x = { 'encoding', 'filetype' },
+                    lualine_y = { 'progress', 'selectioncount' }
                 }
             }
         end
