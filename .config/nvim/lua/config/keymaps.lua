@@ -4,6 +4,11 @@
 -- vim.keymap.set('n', '<F5>', '<cmd>!meson install -C build<CR>')
 -- vim.keymap.set('n', '<F6>', '<cmd>!./bin/exe<CR>')
 
+vim.keymap.set('n', 'gK', function()
+  local new_config = not vim.diagnostic.config().virtual_lines
+  vim.diagnostic.config({ virtual_lines = new_config })
+end, { desc = 'Toggle diagnostic virtual_lines' })
+
 -- cmake
 vim.keymap.set('n', '<F3>', '<cmd>!cmake -B build/ -S . -DCMAKE_BUILD_TYPE=Debug<CR>')
 vim.keymap.set('n', '<F4>', '<cmd>!cmake -B build/ -S . -DCMAKE_BUILD_TYPE=Release<CR>')

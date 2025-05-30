@@ -22,6 +22,13 @@ require("lazy").setup("plugins", {
 })
 require("config").setup()
 
+-- blade
+vim.filetype.add({
+  pattern = {
+    ['.*%.blade%.php'] = 'blade',
+  },
+})
+
 -- vim.cmd('hi IlluminatedWordText guibg=none gui=underline')
 -- vim.cmd('hi IlluminatedWordRead guibg=none gui=underline')
 -- vim.cmd('hi IlluminatedWordWrite guibg=none gui=underline')
