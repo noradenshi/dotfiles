@@ -132,6 +132,17 @@ return {
                     function(server_name)
                         require('lspconfig')[server_name].setup({})
                     end,
+
+                    ["omnisharp"] = function()
+                        local mason_registry = require("mason-registry")
+                        local omnisharp = mason_registry.get_package("omnisharp")
+                        local omnisharp_path = omnisharp:get_install_path() .. "/OmniSharp"
+
+                        require("lspconfig").omnisharp.setup({
+                            cmd = { omnisharp_path },
+                            -- Optionally add more config here (capabilities, on_attach, etc.)
+                        })
+                    end,
                 }
             })
         end
